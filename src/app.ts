@@ -5,6 +5,7 @@ import userRoutes from "./routes/User"
 import dbConnection from "./db/Connection";
 import helmet from 'helmet';
 import 'dotenv/config'
+import { logRequest } from "./middleware/LogRequest";
 
 // express server
 const app=express();
@@ -13,6 +14,7 @@ dbConnection() // connrction to db
 // middlewares
 app.use(helmet());
 app.use(bodyParser.json())
+app.use(logRequest)
 // Custom Routes
 app.use("/users",userRoutes)
 
