@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 import User from "../models/User";
 import { UserData } from "../types/UserData";
 import isEmail from "validator/lib/isEmail";
-import { isNumeric } from "validator";
+
 
 // for get all users
 export async function getUsers(req: Request, res: Response) {
